@@ -2,19 +2,61 @@
   "project_id": "e3171056-ae4e-4cf6-8807-9a9e7fe358ee",
   "components": [
     {
-      "id": "dropper_1",
-      "provider": "dropper",
-      "name": "woaw",
+      "id": "webhook_1",
+      "provider": "webhook",
       "config": {
         "hideForm": true,
         "mode": "Source",
         "parameters": {},
-        "type": "dropper"
+        "type": "webhook"
       },
       "ui": {
         "position": {
-          "x": 705,
-          "y": 450
+          "x": 12,
+          "y": 80
+        },
+        "measured": {
+          "width": 150,
+          "height": 154
+        },
+        "nodeType": "default",
+        "formDataValid": true
+      }
+    },
+    {
+      "id": "parse_1",
+      "provider": "parse",
+      "name": "Parser",
+      "config": {},
+      "ui": {
+        "position": {
+          "x": 242,
+          "y": 80
+        },
+        "measured": {
+          "width": 150,
+          "height": 136
+        },
+        "nodeType": "default",
+        "formDataValid": true
+      },
+      "input": [
+        {
+          "lane": "tags",
+          "from": "webhook_1"
+        }
+      ]
+    },
+    {
+      "id": "response_table_1",
+      "provider": "response_table",
+      "config": {
+        "laneName": "table"
+      },
+      "ui": {
+        "position": {
+          "x": 472,
+          "y": 12
         },
         "measured": {
           "width": 150,
@@ -22,15 +64,66 @@
         },
         "nodeType": "default",
         "formDataValid": true
+      },
+      "input": [
+        {
+          "lane": "table",
+          "from": "parse_1"
+        }
+      ]
+    },
+    {
+      "id": "response_text_1",
+      "provider": "response_text",
+      "config": {
+        "laneName": "text"
+      },
+      "ui": {
+        "position": {
+          "x": 472,
+          "y": 138
+        },
+        "measured": {
+          "width": 150,
+          "height": 66
+        },
+        "nodeType": "default",
+        "formDataValid": true
+      },
+      "input": [
+        {
+          "lane": "text",
+          "from": "parse_1"
+        }
+      ]
+    },
+    {
+      "id": "llm_gemini_1",
+      "provider": "llm_gemini",
+      "config": {
+        "profile": "gemini-3_1-pro-preview",
+        "1-pro-preview": {}
+      },
+      "ui": {
+        "position": {
+          "x": 146.1547800889222,
+          "y": -23.310345420919827
+        },
+        "measured": {
+          "width": 150,
+          "height": 66
+        },
+        "nodeType": "default",
+        "formDataValid": false
       }
     }
   ],
   "viewport": {
-    "x": -994,
-    "y": -800,
-    "zoom": 2
+    "x": 90.27112526580152,
+    "y": 60.919442923020824,
+    "zoom": 1.0155192961651989
   },
   "version": 1,
-  "docRevision": 2,
+  "docRevision": 8,
   "source": "dropper_1"
 }
