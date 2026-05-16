@@ -1,0 +1,36 @@
+{
+  "project_id": "e3171056-ae4e-4cf6-8807-9a9e7fe358ee",
+  "components": [
+    {
+      "id": "dropper_1",
+      "provider": "dropper",
+      "name": "woaw",
+      "config": {
+        "hideForm": true,
+        "mode": "Source",
+        "parameters": {},
+        "type": "dropper"
+      },
+      "ui": {
+        "position": {
+          "x": 705,
+          "y": 450
+        },
+        "measured": {
+          "width": 150,
+          "height": 66
+        },
+        "nodeType": "default",
+        "formDataValid": true
+      }
+    }
+  ],
+  "viewport": {
+    "x": -994,
+    "y": -800,
+    "zoom": 2
+  },
+  "version": 1,
+  "docRevision": 2,
+  "source": "dropper_1"
+}

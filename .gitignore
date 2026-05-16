@@ -1,0 +1,5 @@
+.rocketride/
+.env
+.claude/
+.github/
+.agents/
