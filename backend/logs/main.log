@@ -1,0 +1,29 @@
+[2026-05-16 21:18:47] [INFO] Received prompt: hi
+[2026-05-16 21:18:47] [MOCK] Placeholder: Checking Firebase for user preferences
+[2026-05-16 21:18:47] [MOCK] Placeholder: Fetching Calendar events
+[2026-05-16 21:18:47] [MOCK] Placeholder: Running RocketRide pipeline
+[2026-05-16 21:18:47] [INFO] Returning payload: {'status': 'success', 'original_prompt': 'hi', 'action': 'mock_scheduled_event', 'message': "Successfully processed: 'hi' via RocketRide pipeline."}
+[2026-05-16 21:25:22] [INFO] Initializing mock FirebaseClient
+[2026-05-16 21:25:22] [INFO] Initializing mock CalendarClient
+[2026-05-16 21:25:22] [INFO] Initializing mock RocketRideClient with endpoint https://mock.rocketride.api
+[2026-05-16 21:27:17] [INFO] Received prompt: hi
+[2026-05-16 21:27:17] [MOCK] Fetching preferences for user user_123 from Firebase
+[2026-05-16 21:27:17] [MOCK] Fetching Calendar events for 2026-05-16
+[2026-05-16 21:27:17] [MOCK] Sending payload to RocketRide REST endpoint
+[2026-05-16 21:27:17] [MOCK] Payload: {"prompt": "hi", "context": {"preferences": {"timezone": "America/Los_Angeles", "working_hours": {"start": "09:00", "end": "17:00"}}, "events": [{"id": "evt1", "summary": "Standup", "start": "09:30", "end": "10:00"}]}}
+[2026-05-16 21:27:17] [INFO] Returning payload: {'status': 'success', 'original_prompt': 'hi', 'action': 'schedule_meeting', 'message': "RocketRide suggested a meeting at 14:00 based on 'hi'.", 'details': {'user_preferences_used': {'timezone': 'America/Los_Angeles', 'working_hours': {'start': '09:00', 'end': '17:00'}}, 'calendar_events_considered': 1}}
+[2026-05-16 21:44:38] [INFO] Initializing mock FirebaseClient
+[2026-05-16 21:44:38] [INFO] Initializing mock CalendarClient
+[2026-05-16 21:44:38] [INFO] Initializing mock RocketRideClient with endpoint https://mock.rocketride.api
+[2026-05-16 21:53:12] [INFO] Initializing mock FirebaseClient
+[2026-05-16 21:53:12] [INFO] Initializing mock CalendarClient
+[2026-05-16 21:53:12] [INFO] Initializing mock RocketRideClient with endpoint https://mock.rocketride.api
+[2026-05-16 22:08:52] [INFO] Initializing mock FirebaseClient
+[2026-05-16 22:08:52] [INFO] Initializing mock CalendarClient
+[2026-05-16 22:08:52] [INFO] Initializing mock RocketRideClient with endpoint https://mock.rocketride.api
+[2026-05-16 22:25:35] [INFO] Received prompt: hi there
+[2026-05-16 22:25:35] [MOCK] Fetching preferences for user user_123 from Firebase
+[2026-05-16 22:25:35] [MOCK] Fetching Calendar events for 2026-05-16
+[2026-05-16 22:25:35] [MOCK] Sending payload to RocketRide REST endpoint
+[2026-05-16 22:25:35] [MOCK] Payload: {"prompt": "hi there", "context": {"preferences": {"timezone": "America/Los_Angeles", "working_hours": {"start": "09:00", "end": "17:00"}}, "events": [{"id": "evt1", "summary": "Standup", "start": "09:30", "end": "10:00"}]}}
+[2026-05-16 22:25:35] [INFO] Returning payload: {'status': 'success', 'original_prompt': 'hi there', 'action': 'schedule_meeting', 'message': "RocketRide suggested a meeting at 14:00 based on 'hi there'.", 'details': {'user_preferences_used': {'timezone': 'America/Los_Angeles', 'working_hours': {'start': '09:00', 'end': '17:00'}}, 'calendar_events_considered': 1}}
