@@ -31,19 +31,19 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isSigningIn, setIsSigningIn] = useState(false);
 
   const loginWithGoogle = async () => {
-    if (isSigningIn) return; // FIX: Lock popup triggers to avoid duplicate requests and assertion errors
+    if (isSigningIn) return; // Lock popup triggers
     setIsSigningIn(true);
     try {
       const result = await signInWithPopup(auth, googleProvider);
-      
-      // THIS IS THE GOLDMINE: The credential holds the user's Google Calendar token!
+
+      // The credential holds the user's Google Calendar token!
       const credential = GoogleAuthProvider.credentialFromResult(result);
       if (credential?.accessToken) {
         setGoogleToken(credential.accessToken);
         console.log("Google OAuth Token Extracted!", credential.accessToken);
       }
     } catch (error: any) {
-      // FIX: Gracefully handle benign user-cancelled or browser-blocked popup errors
+      // Handle popup errors
       if (
         error.code === 'auth/cancelled-popup-request' ||
         error.code === 'auth/popup-blocked' ||

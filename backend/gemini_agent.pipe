@@ -16,7 +16,7 @@
         },
         "measured": {
           "width": 150,
-          "height": 66
+          "height": 117
         },
         "nodeType": "default",
         "formDataValid": true
@@ -84,11 +84,16 @@
       "id": "llm_gemini_1",
       "provider": "llm_gemini",
       "config": {
-        "profile": "gemini-3-flash-preview",
+        "profile": "gemini-2_5-flash",
         "gemini-3-flash-preview": {
           "apikey": "${ROCKETRIDE_GEMINI_KEY}"
         },
-        "parameters": {}
+        "parameters": {
+          "google": {}
+        },
+        "gemini-2_5-flash": {
+          "apikey": "AIzaSyDLQIIvMBjKkUknEbFc3gxc6emDWDSzJKY"
+        }
       },
       "ui": {
         "position": {
@@ -122,7 +127,7 @@
         },
         "measured": {
           "width": 150,
-          "height": 66
+          "height": 40
         },
         "nodeType": "default",
         "formDataValid": true
@@ -138,11 +143,14 @@
       "id": "mcp_client_1",
       "provider": "mcp_client",
       "config": {
-        "type": "mcp_client",
         "serverName": "optitime_mcp",
         "transport": "stdio",
+        "type": "mcp_client",
         "stdio": {
-          "commandLine": "python backend/mcp_server.py"
+          "commandLine": "C:\\\\\\\\Users\\\\\\\\shubh\\\\\\\\.conda\\\\\\\\envs\\\\\\\\optitime\\\\\\\\python.exe c:/Users/shubh/MyStuff/GitHub/optitime/backend/mcp_server.py"
+        },
+        "parameters": {
+          "google": {}
         }
       },
       "ui": {
@@ -152,7 +160,7 @@
         },
         "measured": {
           "width": 150,
-          "height": 66
+          "height": 40
         },
         "nodeType": "default",
         "formDataValid": true
@@ -165,11 +173,13 @@
       ]
     }
   ],
-  "project_id": "b4d99824-7f12-40e9-b5f7-4b7b2520bb33",
+  "project_id": "d24557d8-bfef-4666-9704-a257e4be3f59",
   "viewport": {
-    "x": 0,
-    "y": 0,
-    "zoom": 1
+    "x": 60.90606416509013,
+    "y": -165.91378705836252,
+    "zoom": 1.3035885211324254
   },
-  "version": 1
+  "version": 1,
+  "source": "chat_1",
+  "docRevision": 4
 }

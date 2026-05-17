@@ -3,3 +3,6 @@
 .claude/
 .github/
 .agents/
+backend/firestore_db.json
+backend/logs/
+__pycache__/
