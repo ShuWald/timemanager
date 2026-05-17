@@ -28,7 +28,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return () => unsubscribe();
   }, []);
 
+  const [isSigningIn, setIsSigningIn] = useState(false);
+
   const loginWithGoogle = async () => {
+    if (isSigningIn) return; // FIX: Lock popup triggers to avoid duplicate requests and assertion errors
+    setIsSigningIn(true);
     try {
       const result = await signInWithPopup(auth, googleProvider);
       
@@ -38,8 +42,19 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         setGoogleToken(credential.accessToken);
         console.log("Google OAuth Token Extracted!", credential.accessToken);
       }
-    } catch (error) {
-      console.error("Login failed:", error);
+    } catch (error: any) {
+      // FIX: Gracefully handle benign user-cancelled or browser-blocked popup errors
+      if (
+        error.code === 'auth/cancelled-popup-request' ||
+        error.code === 'auth/popup-blocked' ||
+        error.code === 'auth/popup-closed-by-user'
+      ) {
+        console.warn("Sign-in popup cancelled or blocked by browser/user.", error.code);
+      } else {
+        console.error("Login failed:", error);
+      }
+    } finally {
+      setIsSigningIn(false);
     }
   };
 

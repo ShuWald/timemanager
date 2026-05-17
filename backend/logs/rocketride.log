@@ -1,8 +1,0 @@
-[2026-05-16 21:25:22] [INFO] Initializing mock RocketRideClient with endpoint https://mock.rocketride.api
-[2026-05-16 21:27:17] [MOCK] Sending payload to RocketRide REST endpoint
-[2026-05-16 21:27:17] [MOCK] Payload: {"prompt": "hi", "context": {"preferences": {"timezone": "America/Los_Angeles", "working_hours": {"start": "09:00", "end": "17:00"}}, "events": [{"id": "evt1", "summary": "Standup", "start": "09:30", "end": "10:00"}]}}
-[2026-05-16 21:44:38] [INFO] Initializing mock RocketRideClient with endpoint https://mock.rocketride.api
-[2026-05-16 21:53:12] [INFO] Initializing mock RocketRideClient with endpoint https://mock.rocketride.api
-[2026-05-16 22:08:52] [INFO] Initializing mock RocketRideClient with endpoint https://mock.rocketride.api
-[2026-05-16 22:25:35] [MOCK] Sending payload to RocketRide REST endpoint
-[2026-05-16 22:25:35] [MOCK] Payload: {"prompt": "hi there", "context": {"preferences": {"timezone": "America/Los_Angeles", "working_hours": {"start": "09:00", "end": "17:00"}}, "events": [{"id": "evt1", "summary": "Standup", "start": "09:30", "end": "10:00"}]}}
